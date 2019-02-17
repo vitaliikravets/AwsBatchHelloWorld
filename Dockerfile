@@ -10,6 +10,9 @@ ENTRYPOINT ["java", "-jar", "AwsBatchHelloWorld-1.0-SNAPSHOT-jar-with-dependenci
 # CMD defines default arguments. This is useful for local runs. AWS Batch will override those arguments.
 CMD ["--marketplaceId", "default-value-from-dockerfile"]
 
+# Login to AWS
+# $(aws ecr get-login --no-include-email --region us-west-2)
+
 # Run in aws batch
 # aws batch submit-job --region us-west-2 --job-name JobName --job-queue JobQueue-03a951d66d884ac --job-definition JobDefinition-9323d517baea6d3 --parameters marketplaceId=123
 
